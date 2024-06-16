@@ -1,12 +1,11 @@
 spring:
   application:
-    name: Welcome-API
+    name: WELCOME-API
   boot:
     admin:
       client:
         url: http://localhost:8080
-server:
-  port: 9092
+
 management:
   endpoints:
     web:

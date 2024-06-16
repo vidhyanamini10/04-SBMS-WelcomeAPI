@@ -12,7 +12,8 @@ public class WelcomeRestController {
 	
 	@Autowired
 	public GreetFeignInterface greetFeignInterface;
-	
+	@Autowired
+	public Environment env;
 	
 	
 	@GetMapping("/welcome")
@@ -20,10 +21,12 @@ public class WelcomeRestController {
 		String greetApi = greetFeignInterface.invokeGreetApi();
 		String welcomemsg = "Welcome to Feign client communication";
 		
+		String property = env.getProperty("server.port");
 		
 		
 		
-		return greetApi + ""+ welcomemsg ;
+		
+		return greetApi + " ::  "+ welcomemsg +"::::" +property ;
 		
 	}
 
